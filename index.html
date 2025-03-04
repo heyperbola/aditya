@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Losses Analyzer & Efficiency Calculator</title>
+    <link rel="icon" type="image/x-icon" href="kumar.jpg">
+    <link rel="stylesheet" href="gui2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="gui2.js" defer></script>
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="full-screen">
+        <h1>Indian Institute Of Information Technology Vadodara International Campus Diu</h1>
+        <img src="kumar.jpg" alt="IIITV ICD" height="123">
+        <h2>Welcome to Transformer Losses Analyzer & Efficiency Calculator</h2>
+        <h3>Guidance by Dr. Varun Kumar</h3>
+        <h4>Group Members & Student IDs</h4>
+        <p>Aditya Raj <b>202411004</b></p>
+        <p>Angshuman Das Adhikary <b>202411006</b></p>
+        <p>Mayur Baldaniya <b>202411016</b></p>
+        <p>Mainak Ghosh <b>202411057</b></p>
+        <p>Subodh Kumar <b>202411092</b></p>
+        <button id="startButton">Start</button>
+    </div>
+
+    <!-- Input Section -->
+    <div id="inputPage" class="container" style="display: none;">
+        <div class="input-section">
+            <h2>Transformer Parameters</h2>
+            <label>Primary Voltage (V): </label>
+            <input type="number" id="primaryVoltage" value="230" step="any">
+            <label>Secondary Voltage (V): </label>
+            <input type="number" id="secondaryVoltage" value="110" step="any">
+            <label>Rated Power (kVA): </label>
+            <input type="number" id="ratedPower" value="10" step="any">
+            <label>Frequency (Hz): </label>
+            <input type="number" id="frequency" value="50" step="any">
+
+            <h3>Material Properties</h3>
+            <label>Core Type: </label>
+            <select id="coreType">
+                <option value="CRGO">CRGO</option>
+                <option value="Ferrite">Ferrite</option>
+                <option value="Amorphous">Amorphous Steel</option>
+            </select>
+            <label>Winding Resistance (Ω): </label>
+            <input type="number" id="windingResistance" value="0.1" step="any">
+
+            <h3>Load Conditions</h3>
+            <label>Load Level (%): </label>
+            <input type="number" id="loadLevel" value="50" step="any" min="0" max="100">
+
+            <button onclick="calculateLosses()">Calculate & Plot</button>
+        </div>
+    </div>
+
+    <!-- Graph View -->
+    <div id="graphView" class="full-screen" style="display: none;">
+        <div id="graphContainer"></div>
+        <button id="nextButton">Next</button>
+        <button id="closeButton">Close</button>
+    </div>
+</body>
+</html>
